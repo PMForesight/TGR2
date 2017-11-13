@@ -1,8 +1,6 @@
-﻿using System;
-using System.Text;
+﻿
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace TGRTests
 {
@@ -13,6 +11,17 @@ namespace TGRTests
         public void Login()
         {
             
+        }
+
+        [Test]
+        public void SimpleProjectCreation()
+        {
+            app.Nav.GoToObjects();
+            app.Nav.GoToProjectRegister();
+            //app.Contr.WaitHideElement(By.ClassName(""));
+            app.Proj.InitProjectCreation();
+            app.Proj.FillProjectForm();
+           // app.Proj.SaveProject();
         }
     }
 }

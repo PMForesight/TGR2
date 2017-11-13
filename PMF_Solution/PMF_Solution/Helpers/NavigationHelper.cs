@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace TGRTests
 {
@@ -18,6 +18,16 @@ namespace TGRTests
         public void OpenHomepage()
         {
             driver.Navigate().GoToUrl(baseURL);
+        }
+
+        public void GoToObjects()
+        {
+            driver.FindElement(By.CssSelector("a.dcjq-parent > span")).Click();
+        }
+
+        public void GoToProjectRegister()
+        {
+            driver.FindElement(By.XPath(".//*[@id='nav-accordion']/li[1]/ul/li[5]/a")).Click();
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace TGRTests
 {
@@ -12,7 +14,6 @@ namespace TGRTests
         public void Login(UserData user)
         {
             driver.FindElement(By.XPath("//a[@id='formLogin']")).Click();
-            //driver.FindElement(By.XPath("//a[@id='formLogin']/div/div")).Click();
             driver.FindElement(By.Id("UserName")).Clear();
             driver.FindElement(By.Id("UserName")).SendKeys(user.Username);
             driver.FindElement(By.Id("UserPassword")).Clear();
@@ -23,7 +24,11 @@ namespace TGRTests
 
         public void Logout()
         {
-            driver.FindElement(By.CssSelector("b.caret.mobile-collapse")).Click();
+            /*var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(50));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("b.caret.mobile-collapse"))).Click();*/
+             driver.FindElement(By.CssSelector("b.caret.mobile-collapse")).Click();
+
+            //wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText("Выход"))).Click();
             driver.FindElement(By.LinkText("Выход")).Click();
         }
     }

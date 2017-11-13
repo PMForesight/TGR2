@@ -66,10 +66,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helpers\ControlHelper.cs" />
     <Compile Include="Helpers\ApplicationManager.cs" />
     <Compile Include="Helpers\HelperBase.cs" />
     <Compile Include="Helpers\LoginHelper.cs" />
     <Compile Include="Helpers\NavigationHelper.cs" />
+    <Compile Include="Helpers\ProjectHelper.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,7 +80,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

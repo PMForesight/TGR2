@@ -20,6 +20,5 @@ namespace TGRTests
             app.Auth.Logout();
             app.Stop();
         }
-
     }
 }
